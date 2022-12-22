@@ -27,3 +27,13 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: docs/.vitepress/dist
           # cname: example.com # if wanna deploy to custom domain
+        
+      - name: SCP Files
+        uses: appleboy/scp-action@v0.0.1
+        with: 
+         host: 49.232.191.162
+         username: root
+         password: xiaomei888??
+         port: 22
+         source: docs/.vitepress/dist
+         target: /docs
