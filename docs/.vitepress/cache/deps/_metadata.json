@@ -1,29 +1,23 @@
 {
-  "hash": "eadd172d",
-  "browserHash": "e794693f",
+  "hash": "5099eb51",
+  "browserHash": "1ef16545",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "57430e07",
-      "needsInterop": false
-    },
-    "element-plus": {
-      "src": "../../../../node_modules/element-plus/es/index.mjs",
-      "file": "element-plus.js",
-      "fileHash": "9d0d78a6",
-      "needsInterop": false
-    },
-    "gsap": {
-      "src": "../../../../node_modules/gsap/index.js",
-      "file": "gsap.js",
-      "fileHash": "d477c8b0",
+      "fileHash": "c896f2b1",
       "needsInterop": false
     },
     "@big0range/ui": {
       "src": "../../../../node_modules/@big0range/ui/packages/index.ts",
       "file": "@big0range_ui.js",
-      "fileHash": "102d294c",
+      "fileHash": "887951c3",
+      "needsInterop": false
+    },
+    "element-plus": {
+      "src": "../../../../node_modules/element-plus/es/index.mjs",
+      "file": "element-plus.js",
+      "fileHash": "73268da1",
       "needsInterop": false
     }
   },

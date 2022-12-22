@@ -4,17 +4,17 @@ layout: home
 hero:
   name: buibuibui
   text: vue3 typescript
-  tagline: more
+  tagline: 个人组件库
   image:
     src: /logo.png
     alt: logo
   actions:
     - theme: brand
       text: Get Started
-      link: /guide/what-is-vitepress
+      link: /docs/installation
     - theme: alt
       text: View on GitHub
-      link: https://github.com/vuejs/vitepress
+      link: https://github.com/Big0range/ui
 
 features:
   - icon: 💡
@@ -27,7 +27,7 @@ features:
     title: 按需引入
     details: 直接支持按需引入无需配置任何插件。
 ---
-<el-button type="primary">主要按钮</el-button>
+<!-- <el-button type="primary">主要按钮</el-button> -->
 <style>
 :root {
   --vp-home-hero-name-color: transparent;

@@ -1,17 +1,15 @@
 # 快速开始
 
-本节将介绍如何在项目中使用 KittyUI
+本节将介绍如何在项目中使用
 
 ## 用法
 
-```
+```html
 <template>
-  <Button>按钮</Button>
+  <CountTo :startVal="666666"  :end-val="999999" :duration="5000" />
 </template>
 
 <script setup>
-
-import { Button } from 'kitty-ui'
-
+  import { CountTo } from "@big0range/ui";
 </script>
 ```
