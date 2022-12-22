@@ -2,8 +2,9 @@
 
 ## 基础用法
 
-
- <CountTo  :end-val="999999" :duration="5000" />
+<ClientOnly>
+ <CountTo :startVal="666666"  :end-val="999999" :duration="5000" />
+</ClientOnly>
 
 ::: details 显示代码
 
@@ -12,11 +13,12 @@
   <CountTo :start-val="666666" :end-val="999999" :duration="5000" />
 </template>
 <script lang="ts" setup>
-import { CountTo } from '@big0range/ui'
+  import { CountTo } from "@big0range/ui";
 </script>
 ```
 
 :::
+
 ## Attributes
 
 | 参数      | 说明       | 类型   | 可选值 | 默认 |
