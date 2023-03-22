@@ -8,8 +8,8 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-dist
-big0range-ui
+big0range-ui/dist
+big0range-ui/types
 dist-ssr
 *.local
 

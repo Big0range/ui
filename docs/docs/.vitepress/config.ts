@@ -3,7 +3,7 @@ import { nav } from './utils/nav'
 import { sidebar } from './utils/sidebar'
 
 export default defineConfig({
-    title: 'bui',
+    title: 'big0range',
     // titleTemplate:'bui',
     description: '个人组件库',
     lang: 'cn-ZH',
@@ -12,7 +12,7 @@ export default defineConfig({
     themeConfig: {
         nav,
         sidebar,
-        siteTitle: 'buibuibui',
+        siteTitle: 'big0range-ui',
         socialLinks: [{ icon: 'github', link: 'https://github.com/Big0range/ui' },],
         lastUpdatedText: '最后更新时间',
         outlineTitle: 'CONTENTS',
@@ -21,7 +21,7 @@ export default defineConfig({
             next: '下一页'
         },
         editLink: {
-            pattern: 'https://github.com/Big0range/ui/edit/main/docs/:path',
+            pattern: 'https://github.com/Big0range/ui/edit/main/docs/docs/:path',
             text: '在GitHub上编辑此页面'
         }
     },

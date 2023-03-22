@@ -1,6 +1,6 @@
 ---
 layout: home
-
+title: 首页
 hero:
   name: buibuibui
   text: vue3 typescript

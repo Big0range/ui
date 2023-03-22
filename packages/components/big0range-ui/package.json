@@ -1,0 +1,34 @@
+{
+  "name": "@big0range/ui",
+  "version": "1.0.8",
+  "description": "",
+  "main": "./dist/big0range-ui.umd.cjs",
+  "module": "./dist/big0range-ui.js",
+  "types": "./types/index.d.ts",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "package.json",
+    "dist",
+    "types"
+  ],
+  "style": "dist/style.css",
+
+  "exports": {
+    ".": {
+      "import": "./dist/big0range-ui.js",
+      "require": "./dist/big0range-ui.umd.cjs"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@big0range/utils": "1.0.8"
+  },
+  "keywords": [],
+  "author": "李美超",
+  "license": "MIT"
+}

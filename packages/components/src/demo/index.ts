@@ -1,4 +1,4 @@
-import button from './demo.vue'
+import demo from './demo.vue'
 import { withInstall } from '@big0range/utils'
-const Demo = withInstall(button)
+const Demo = withInstall(demo)
 export default Demo

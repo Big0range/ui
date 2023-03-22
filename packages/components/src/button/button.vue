@@ -1,5 +1,5 @@
 <template>
-  <div class="button">button{{ a }}</div>
+  <div class="button">button组件</div>
 </template>
 <script lang="ts" setup>
 import "./button.scss";

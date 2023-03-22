@@ -1,16 +1,28 @@
 {
   "name": "@big0range/utils",
-  "version": "1.0.0",
-  "main": "./index.ts",
-  "module": "./index.ts",
+  "version": "1.0.8",
+  "main": "./dist/utils.umd.js",
+  "module": "./dist/utils.mjs",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/utils.mjs",
+      "require": "./dist/utils.umd.js"
+    }
+  },
   "description": "",
   "keywords": [],
   "files": [
-    "dist"
+    "dist",
+    "package.json",
+    "src"
   ],
   "author": "",
   "license": "MIT",
   "scripts": {
     "build": "vite build"
+  },
+  "devDependencies": {
+    "vite-plugin-dts": "^2.1.0"
   }
 }

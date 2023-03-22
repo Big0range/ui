@@ -3,14 +3,14 @@
 ## 基础用法
 
 <ClientOnly>
- <CountTo :startVal="666666"  :end-val="999999" :duration="5000" />
+ <CountTo :startVal="0"  :end-val="666666" :duration="5000" />
 </ClientOnly>
 
 ::: details 显示代码
 
 ```html
 <template>
-  <CountTo :start-val="666666" :end-val="999999" :duration="5000" />
+  <CountTo :start-val="0" :end-val="666666" :duration="5000" />
 </template>
 <script lang="ts" setup>
   import { CountTo } from "ui";
