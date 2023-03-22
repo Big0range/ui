@@ -70,7 +70,7 @@ importers:
       vue: ^3.2.47
       vue-tsc: ^1.2.0
     dependencies:
-      '@big0range/utils': link:../utils
+      '@big0range/utils': link:../utils/big0range-utils
       element-plus: 2.3.1_vue@3.2.47
       gsap: 3.11.5
       path: 0.12.7
@@ -84,7 +84,19 @@ importers:
       vite: 4.2.1_sass@1.59.3
       vue-tsc: 1.2.0_typescript@4.9.5
 
+  packages/components/big0range-ui:
+    specifiers:
+      '@big0range/utils': 1.0.8
+    dependencies:
+      '@big0range/utils': link:../../utils/big0range-utils
+
   packages/utils:
+    specifiers:
+      vite-plugin-dts: ^2.1.0
+    devDependencies:
+      vite-plugin-dts: 2.1.0
+
+  packages/utils/big0range-utils:
     specifiers:
       vite-plugin-dts: ^2.1.0
     devDependencies:
