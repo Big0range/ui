@@ -1,0 +1,16 @@
+{
+  "name": "@big0range/utils",
+  "version": "1.0.0",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "description": "",
+  "keywords": [],
+  "files": [
+    "dist"
+  ],
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "build": "vite build"
+  }
+}

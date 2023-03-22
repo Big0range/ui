@@ -1,0 +1,19 @@
+{
+  "name": "vitepress-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "vitepress": "^1.0.0-alpha.32",
+    "vue": "^3.2.45"
+  },
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs"
+  },
+  "dependencies": {
+    "@big0range/ui": "^1.0.5",
+    "ui": "workspace:^1.0.0"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "hash": "c17c1e4a",
+  "browserHash": "5b8feb4c",
+  "optimized": {
+    "vue": {
+      "src": "../../../../../node_modules/.pnpm/vue@3.2.47/node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "a3001a85",
+      "needsInterop": false
+    },
+    "gsap": {
+      "src": "../../../../../node_modules/.pnpm/gsap@3.11.5/node_modules/gsap/index.js",
+      "file": "gsap.js",
+      "fileHash": "869fe330",
+      "needsInterop": false
+    }
+  },
+  "chunks": {}
+}

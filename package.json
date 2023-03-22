@@ -1,19 +1,28 @@
 {
-  "name": "vitepress-demo",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "devDependencies": {
-    "vitepress": "^1.0.0-alpha.32",
-    "vue": "^3.2.45"
-  },
+  "name": "pnpm-demo",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "build:ui": "pnpm run --filter ./packages/components build",
+    "publish:ui": "pnpm run --filter ./packages/components/kitty-ui release",
+    "docs:dev": "pnpm run --filter ./docs dev",
+    "docs:build": "pnpm run --filter ./docs build",
+    "docs:serve": "pnpm run --filter ./docs preview",
+    "exm:dev": "pnpm run --filter ./examples dev",
+    "test": "pnpm run --filter ./packages/components test",
+    "coverage": "pnpm run --filter ./packages/components coverage",
+    "release-it": "release-it"
   },
   "dependencies": {
-    "@big0range/ui": "^0.0.2",
-    "element-plus": "^2.2.27"
+    "vue": "^3.2.47"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.5",
+    "@vitejs/plugin-vue": "^4.1.0",
+    "release-it": "^15.9.0",
+    "typescript": "^4.9.3",
+    "vite": "^4.2.0",
+    "vue-tsc": "^1.2.0"
   }
 }

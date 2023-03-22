@@ -1,0 +1,16 @@
+node_modules
+.DS_Store
+dist
+dist-ssr
+vite.config.ts
+*.local
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.local
+/vite.config.ts

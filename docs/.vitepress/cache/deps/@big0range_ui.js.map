@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../../../node_modules/@big0range/ui/packages/index.ts"],
-  "sourcesContent": ["import Button from './Button/index.vue'\nimport CountTo from './CountTo/index.vue'\nexport {\n    Button,\n    CountTo\n}"],
-  "mappings": ";;;AAAA,OAAO,YAAY;AACnB,OAAO,aAAa;",
-  "names": []
-}

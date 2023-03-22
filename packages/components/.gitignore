@@ -9,6 +9,7 @@ lerna-debug.log*
 
 node_modules
 dist
+big0range-ui
 dist-ssr
 *.local
 
