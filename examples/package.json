@@ -9,6 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@big0range/utils": "workspace:^1.0.8",
+    "ui": "workspace:^1.0.0",
+    "utils": "workspace:^1.0.8",
     "vue": "^3.2.47"
   },
   "devDependencies": {

@@ -10,6 +10,11 @@ export const nav = [
     text: '基础组件',
     activeMatch: '^/components/',
     link: '/components/CountTo'
+  },
+  {
+    text: '工具类',
+    activeMatch: '^/utils/',
+    link: '/utils/waterMark'
   }
 
 ]

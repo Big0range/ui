@@ -2,7 +2,7 @@ import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import dts from 'vite-plugin-dts'
-
+import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -10,6 +10,7 @@ export default defineConfig({
     outputDir: './big0range-ui/types',
   })],
   build: {
+  
     lib: {
       // 入口指向组件库入口模块
       entry: resolve(__dirname, 'src/index.ts'),
@@ -28,6 +29,12 @@ export default defineConfig({
           vue: 'Vue'
         }
       }
+    }
+  },
+  resolve: {
+    // Vite路径别名配置
+    alias: {
+      '@': path.resolve('./src')
     }
   }
 })

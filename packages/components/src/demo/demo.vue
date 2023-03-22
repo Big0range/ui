@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <el-button>{{ demo.a }} b:{{ demo.b }}</el-button>
+      <el-button>{{ a }} b:{{ b }}</el-button>
     </div>
   </div>
 </template>
@@ -13,5 +13,4 @@ interface IDemo {
   b: string;
 }
 defineProps<IDemo>();
-const demo = ref<IDemo>({ a: "a", b: "b" });
 </script>

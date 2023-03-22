@@ -5,48 +5,22 @@ import { resolve } from 'path'
 export default defineConfig(
     {
         build: {
-            // target: 'modules',
-            // //打包文件目录
-            // outDir: "es",
-            // //压缩
-            // minify: true,
-            //css分离
-            //cssCodeSplit: true,
-            // rollupOptions: {
-
-            //     input: ['index.ts'],
-            //     output: [
-            //         {
-            //             format: 'es',
-            //             //不用打包成.es.js,这里我们想把它打包成.js
-            //             entryFileNames: '[name].js',
-            //             //让打包目录和我们目录对应
-            //             preserveModules: true,
-            //             //配置打包根目录
-            //             dir: resolve(__dirname, './dist/es')
-
-            //         },
-            //         {
-            //             format: 'cjs',
-            //             //不用打包成.mjs
-            //             entryFileNames: '[name].js',
-            //             //让打包目录和我们目录对应
-            //             preserveModules: true,
-            //             //配置打包根目录
-            //             dir: resolve(__dirname, './dist/lib')
-            //         }
-            //     ]
-            // },
             lib: {
                 entry: './src/index.ts',
                 name: 'utils',
-            }
+                // 构建生成的文件名，与package.json中配置一致
+                fileName: 'utils',
+            },
+            rollupOptions: {
+                output: {
+                    dir: './big0range-utils/dist',
+                }
+            },
         },
-
         plugins: [
 
             dts({
-                outputDir: resolve(__dirname, './dist/types'),
+                outputDir: resolve(__dirname, './big0range-utils/types'),
                 //指定使用的tsconfig.json为我们整个项目根目录下掉,如果不配置,你也可以在components下新建tsconfig.json
                 tsConfigFilePath: '../../tsconfig.json'
             }),
