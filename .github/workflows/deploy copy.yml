@@ -1,39 +1,43 @@
-# name: Deploy
+name: Deploy
 
-# on:
-#   push:
-#     branches:
-#       - main
+on:
+  push:
+    branches:
+      - main
 
-# jobs:
-#   deploy:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v3
-#         with:
-#           fetch-depth: 0
-#       - uses: actions/setup-node@v3
-#         with:
-#           node-version: 16
-#           cache: yarn
-#       - run: yarn install --frozen-lockfile
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
-#       - name: Build
-#         run: yarn docs:build
+      - name: Setup Node.js environment
+      - uses: actions/setup-node@v3.6.0
+        with:
+          node-version: 16
+          cache: pnpm
 
-#       - name: Deploy
-#         uses: peaceiris/actions-gh-pages@v3
-#         with:
-#           github_token: ${{ secrets.GITHUB_TOKEN }}
-#           publish_dir: docs/.vitepress/dist
-#           # cname: example.com # if wanna deploy to custom domain
+      - name: Install Dependencies
+        run: pnpm install
         
-#       # - name: SCP Files
-#       #   uses: appleboy/scp-action@v0.0.1
-#       #   with: 
-#       #    host: 49.232.191.162
-#       #    username: root
-#       #    password: xiaomei888??
-#       #    port: 22
-#       #    source: docs/.vitepress/dist
-#       #    target: /docs
+      - name: Build
+        run: pnpm run docs:build
+      
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/docs/.vitepress/dist
+          # cname: example.com # if wanna deploy to custom domain
+        
+      # - name: SCP Files
+      #   uses: appleboy/scp-action@v0.0.1
+      #   with: 
+      #    host: 49.232.191.162
+      #    username: root
+      #    password: xiaomei888??
+      #    port: 22
+      #    source: docs/.vitepress/dist
+      #    target: /docs
