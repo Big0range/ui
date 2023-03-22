@@ -12,12 +12,11 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v3.6.0
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.4
         with:
-          node-version: 16
-          cache: pnpm
-
-      - name: pnpm install
+          version: 7.30.0
+      - name: Install modules
         run: pnpm install
       - name: Build
         run: pnpm run  docs:build
