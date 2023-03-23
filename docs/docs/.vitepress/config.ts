@@ -3,8 +3,11 @@ import { nav } from './utils/nav'
 import { sidebar } from './utils/sidebar'
 
 export default defineConfig({
-    title: 'big0range',
+    title: 'big0range-ui',
     // titleTemplate:'bui',
+    head: [
+        ['link', { rel: 'icon', href: '/ui/favicon.ico' }],
+    ],
     description: '个人组件库',
     lang: 'cn-ZH',
     base: '/ui/',
@@ -12,10 +15,11 @@ export default defineConfig({
     themeConfig: {
         nav,
         sidebar,
+        logo: '/logo.png',
         siteTitle: 'big0range-ui',
         socialLinks: [{ icon: 'github', link: 'https://github.com/Big0range/ui' },],
         lastUpdatedText: '最后更新时间',
-        outlineTitle: 'CONTENTS',
+        outlineTitle: '目录',
         docFooter: {
             prev: '上一页',
             next: '下一页'
@@ -27,6 +31,7 @@ export default defineConfig({
     },
     markdown: {
         // theme: 'material-palenight',
+        toc: { level: [2, 3, 4] },
         lineNumbers: true
     },
 })

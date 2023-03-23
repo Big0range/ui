@@ -6,6 +6,7 @@
   "scripts": {
     "build:ui": "pnpm run --filter ./packages/components build",
     "publish:ui": "pnpm run --filter ./packages/components/kitty-ui release",
+    "build:utils": "pnpm run --filter ./packages/utils build",
     "docs:dev": "pnpm run --filter ./docs dev",
     "docs:build": "pnpm run --filter ./docs build",
     "docs:serve": "pnpm run --filter ./docs preview",

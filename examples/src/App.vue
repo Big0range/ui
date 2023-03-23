@@ -4,11 +4,12 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
 import { Demo } from "ui";
-import { isObject, localStorage, waterMark } from "utils";
+import { isObject, localStorage, waterMark, ColorThief, dayjs } from "utils";
 console.log(isObject({ a: 123 }));
 localStorage.set("a", { a: 12 });
 console.log(localStorage.get("a"));
-
+ColorThief.getPalette;
+document.getElementById("img");
 onMounted(() => {
   waterMark.set("这是水印~~");
   // setTimeout(() => {

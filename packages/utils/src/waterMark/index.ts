@@ -38,6 +38,10 @@ function clear() {
     document.body.removeChild(document.getElementById('watermark-div') as any);
   }
 }
+/**
+ * @function set 添加水印
+ * @function clear 清除水印
+ */
 export default {
   set,
   clear

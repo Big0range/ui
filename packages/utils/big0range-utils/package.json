@@ -1,6 +1,6 @@
 {
   "name": "@big0range/utils",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "main": "./dist/utils.umd.js",
   "module": "./dist/utils.mjs",
   "types": "./types/index.d.ts",
@@ -14,14 +14,14 @@
   "keywords": [],
   "files": [
     "dist",
-    "package.json"
+    "types",
+    "package.json",
+    "README.md"
   ],
   "author": "",
   "license": "MIT",
   "scripts": {
     "build": "vite build"
   },
-  "devDependencies": {
-    "vite-plugin-dts": "^2.1.0"
-  }
+  "devDependencies": {}
 }

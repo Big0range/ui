@@ -1,5 +1,9 @@
 /**
- * window.localStorage 浏览器永久缓存
+ * 浏览器永久缓存
+ * @function set 设置永久缓存
+ * @function get 获取永久缓存
+ * @function remove 移除永久缓存
+ * @function clear 移除全部永久缓存
  */
 export default {
     // 设置永久缓存

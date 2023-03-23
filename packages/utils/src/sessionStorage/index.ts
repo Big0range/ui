@@ -1,6 +1,10 @@
 
   /**
-   * window.sessionStorage 浏览器临时缓存
+   * 浏览器临时缓存
+   * @function set 设置临时缓存
+   * @function get 获取临时缓存
+   * @function remove 移除临时缓存
+   * @function clear 移除全部临时缓存
    */
   export default  {
     // 设置临时缓存

@@ -24,6 +24,9 @@ export const sidebar = {
         { text: '添加水印', link: '/utils/waterMark' },
         { text: '临时存储', link: '/utils/sessionStorage' },
         { text: '永久存储', link: '/utils/localStorage' },
+        { text: '下载', link: '/utils/download' },
+        { text: '提取图片颜色', link: '/utils/color-thief' },
+        { text: 'dayjs', link: '/utils/dayjs' },
       ]
     }
   ]

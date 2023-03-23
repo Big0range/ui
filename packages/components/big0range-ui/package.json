@@ -11,7 +11,8 @@
   "files": [
     "package.json",
     "dist",
-    "types"
+    "types",
+    "README.md"
   ],
   "style": "dist/style.css",
 
