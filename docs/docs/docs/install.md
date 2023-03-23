@@ -5,7 +5,7 @@
 使用快速的，节省磁盘空间的包管理工具 [pnpm](https://pnpm.io/zh) 进行安装
 
 ```shell
-pnpm add @big0range/ui
+pnpm add element-plus @big0range/ui
 ```
 
 ## npm
@@ -13,7 +13,7 @@ pnpm add @big0range/ui
 使用 `npm` 进行安装
 
 ```shell
-npm install @big0range/ui
+npm install element-plus @big0range/ui
 ```
 
 ## yarn
@@ -21,5 +21,5 @@ npm install @big0range/ui
 或者使用 `yarn` 进行安装
 
 ```shell
-yarn add @big0range/ui
+yarn add element-plus @big0range/ui
 ```

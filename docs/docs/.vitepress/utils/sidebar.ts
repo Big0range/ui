@@ -21,6 +21,7 @@ export const sidebar = {
     {
       text: '工具类',
       items: [
+        { text: '安装', link: '/utils/' },
         { text: '添加水印', link: '/utils/waterMark' },
         { text: '临时存储', link: '/utils/sessionStorage' },
         { text: '永久存储', link: '/utils/localStorage' },
