@@ -1,1 +1,0 @@
-import{_ as a,c as e,o as t,O as s}from"./chunks/framework.a2795c5c.js";const u=JSON.parse('{"title":"dayjs","description":"","frontmatter":{},"headers":[],"relativePath":"utils/dayjs.md","lastUpdated":1679554990000}'),r={name:"utils/dayjs.md"},o=s("",2),d=[o];function _(n,c,i,l,h,p){return t(),e("div",null,d)}const j=a(r,[["render",_]]);export{u as __pageData,j as default};
