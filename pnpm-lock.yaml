@@ -88,7 +88,7 @@ importers:
     specifiers:
       '@big0range/utils': 1.0.8
     dependencies:
-      '@big0range/utils': link:../../utils/big0range-utils
+      '@big0range/utils': 1.0.8
 
   packages/utils:
     specifiers:
@@ -101,10 +101,7 @@ importers:
       vite-plugin-dts: 2.1.0
 
   packages/utils/big0range-utils:
-    specifiers:
-      vite-plugin-dts: ^2.1.0
-    devDependencies:
-      vite-plugin-dts: 2.1.0
+    specifiers: {}
 
 packages:
 
@@ -256,6 +253,10 @@ packages:
       '@babel/helper-string-parser': 7.19.4
       '@babel/helper-validator-identifier': 7.19.1
       to-fast-properties: 2.0.0
+
+  /@big0range/utils/1.0.8:
+    resolution: {integrity: sha512-m/Lli0DuFeZP0NJTlKbDXwBbyei6JQ+87ifBH9OweXmUYiwcKJ2yhz7N1+tunLu79DN8hZWAFKdxW+qRvaseNQ==}
+    dev: false
 
   /@ctrl/tinycolor/3.6.0:
     resolution: {integrity: sha512-/Z3l6pXthq0JvMYdUFyX9j0MaCltlIn6mfh9jLyQwg5aPKxkyNa0PTHtU1AlFXLNk55ZuAeJRcpvq+tmLfKmaQ==}
@@ -805,7 +806,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.2.1_@types+node@18.15.5
+      vite: 4.2.1
       vue: 3.2.47
     dev: true
 
