@@ -1,6 +1,20 @@
 {
   "name": "@big0range/ui",
   "version": "1.0.8",
+  "homepage": "https://big0range.github.io/ui/",
+  "keywords": [
+    "vue3",
+    "ui",
+    "big0range",
+    "big0range-ui",
+    "李美超",
+    "vue3-ui",
+    "vue3组件库",
+    "typescript"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "description": "",
   "main": "./dist/big0range-ui.umd.cjs",
   "module": "./dist/big0range-ui.js",
@@ -15,7 +29,6 @@
     "README.md"
   ],
   "style": "dist/style.css",
-
   "exports": {
     ".": {
       "import": "./dist/big0range-ui.js",
@@ -23,13 +36,10 @@
     },
     "./dist/style.css": "./dist/style.css"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+ 
   "dependencies": {
-    "@big0range/utils": "1.0.8"
+    "@big0range/utils": "^1.1.0"
   },
-  "keywords": [],
   "author": "李美超",
   "license": "MIT"
 }

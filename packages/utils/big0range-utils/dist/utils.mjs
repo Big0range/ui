@@ -1,20 +1,20 @@
-const vt = (s) => (s.install = (i) => {
-  const a = s.name || s.__name;
-  i.component(a, s);
+const $t = (s) => (s.install = (r) => {
+  const i = s.name || s.__name;
+  r.component(i, s);
 }, s);
-let K = {}, rt = Object.getPrototypeOf, ot = K.toString, tt = K.hasOwnProperty, et = tt.toString, it = et.call(Object);
-const wt = (s) => {
-  let i, a;
-  return !s || ot.call(s) !== "[object Object]" ? !1 : (i = rt(s), i ? (a = tt.call(i, "constructor") && i.constructor, typeof a == "function" && et.call(a) === it) : !0);
-}, yt = {
+let K = {}, ot = Object.getPrototypeOf, it = K.toString, tt = K.hasOwnProperty, et = tt.toString, at = et.call(Object);
+const Mt = (s) => {
+  let r, i;
+  return !s || it.call(s) !== "[object Object]" ? !1 : (r = ot(s), r ? (i = tt.call(r, "constructor") && r.constructor, typeof i == "function" && et.call(i) === at) : !0);
+}, bt = {
   // 设置永久缓存
-  set(s, i) {
-    window.localStorage.setItem(s, JSON.stringify(i));
+  set(s, r) {
+    window.localStorage.setItem(s, JSON.stringify(r));
   },
   // 获取永久缓存
   get(s) {
-    const i = window.localStorage.getItem(s);
-    return JSON.parse(i);
+    const r = window.localStorage.getItem(s);
+    return JSON.parse(r);
   },
   // 移除永久缓存
   remove(s) {
@@ -24,15 +24,15 @@ const wt = (s) => {
   clear() {
     window.localStorage.clear();
   }
-}, $t = {
+}, Dt = {
   // 设置临时缓存
-  set(s, i) {
-    window.sessionStorage.setItem(s, JSON.stringify(i));
+  set(s, r) {
+    window.sessionStorage.setItem(s, JSON.stringify(r));
   },
   // 获取临时缓存
   get(s) {
-    const i = window.sessionStorage.getItem(s);
-    return JSON.parse(i);
+    const r = window.sessionStorage.getItem(s);
+    return JSON.parse(r);
   },
   // 移除临时缓存
   remove(s) {
@@ -43,68 +43,68 @@ const wt = (s) => {
     window.sessionStorage.clear();
   }
 };
-function at(s, i = "rgba(17, 17, 17, 0.2)") {
+function st(s, r = "rgba(17, 17, 17, 0.2)") {
   nt();
-  const a = document.createElement("canvas");
-  a.id = "watermark-canvas", document.body.appendChild(a), a.width = 165, a.height = 95, a.style.display = "none";
-  const f = a.getContext("2d");
-  f.rotate(-20 * Math.PI / 180), f.font = "16px Microsoft JhengHei", f.fillStyle = i, f.textAlign = "left", f.textBaseline = "middle", f.fillText(s, 30, 105, 200);
+  const i = document.createElement("canvas");
+  i.id = "watermark-canvas", document.body.appendChild(i), i.width = 165, i.height = 95, i.style.display = "none";
+  const f = i.getContext("2d");
+  f.rotate(-20 * Math.PI / 180), f.font = "16px Microsoft JhengHei", f.fillStyle = r, f.textAlign = "left", f.textBaseline = "middle", f.fillText(s, 30, 105, 200);
   const u = document.createElement("div");
-  u.id = "watermark-div", u.style.backgroundImage = "url(" + a.toDataURL("image/png") + ")", u.style.position = "fixed", u.style.zIndex = "99999999999", u.style.top = "0", u.style.bottom = "0", u.style.left = "0", u.style.right = "0", u.style.pointerEvents = "none", document.body.appendChild(u), document.body.removeChild(a);
+  u.id = "watermark-div", u.style.backgroundImage = "url(" + i.toDataURL("image/png") + ")", u.style.position = "fixed", u.style.zIndex = "99999999999", u.style.top = "0", u.style.bottom = "0", u.style.left = "0", u.style.right = "0", u.style.pointerEvents = "none", document.body.appendChild(u), document.body.removeChild(i);
 }
 function nt() {
   document.getElementById("watermark-div") && document.body.removeChild(document.getElementById("watermark-div"));
 }
-const Mt = {
-  set: at,
+const St = {
+  set: st,
   clear: nt
 };
-function bt(s, i) {
-  const a = new FileReader();
-  a.readAsDataURL(s), a.onload = function(f) {
-    var S;
+function Ot(s, r) {
+  const i = new FileReader();
+  i.readAsDataURL(s), i.onload = function(f) {
+    var D;
     const u = document.createElement("a");
-    u.download = i, u.href = (S = f.target) == null ? void 0 : S.result, document.body.appendChild(u), u.click(), document.body.removeChild(u), console.log("123");
+    u.download = r, u.href = (D = f.target) == null ? void 0 : D.result, document.body.appendChild(u), u.click(), document.body.removeChild(u), console.log("123");
   };
 }
-function St(s, i) {
-  const a = new Image();
-  a.setAttribute("crossOrigin", "anonymous"), a.onload = function() {
+function _t(s, r) {
+  const i = new Image();
+  i.setAttribute("crossOrigin", "anonymous"), i.onload = function() {
     const f = document.createElement("canvas");
-    f.width = a.width, f.height = a.height, f.getContext("2d").drawImage(a, 0, 0, a.width, a.height);
-    const S = f.toDataURL("image/png"), _ = document.createElement("a"), z = new MouseEvent("click");
-    _.download = i, _.href = S, _.dispatchEvent(z);
-  }, a.src = s;
+    f.width = i.width, f.height = i.height, f.getContext("2d").drawImage(i, 0, 0, i.width, i.height);
+    const D = f.toDataURL("image/png"), _ = document.createElement("a"), T = new MouseEvent("click");
+    _.download = r, _.href = D, _.dispatchEvent(T);
+  }, i.src = s;
 }
 if (!j)
   var j = {
-    map: function(i, a) {
+    map: function(r, i) {
       var f = {};
-      return a ? i.map(function(u, S) {
-        return f.index = S, a.call(f, u);
-      }) : i.slice();
+      return i ? r.map(function(u, D) {
+        return f.index = D, i.call(f, u);
+      }) : r.slice();
     },
-    naturalOrder: function(i, a) {
-      return i < a ? -1 : i > a ? 1 : 0;
+    naturalOrder: function(r, i) {
+      return r < i ? -1 : r > i ? 1 : 0;
     },
-    sum: function(i, a) {
+    sum: function(r, i) {
       var f = {};
-      return i.reduce(a ? function(u, S, _) {
-        return f.index = _, u + a.call(f, S);
-      } : function(u, S) {
-        return u + S;
+      return r.reduce(i ? function(u, D, _) {
+        return f.index = _, u + i.call(f, D);
+      } : function(u, D) {
+        return u + D;
       }, 0);
     },
-    max: function(i, a) {
-      return Math.max.apply(null, a ? j.map(i, a) : i);
+    max: function(r, i) {
+      return Math.max.apply(null, i ? j.map(r, i) : r);
     }
   };
-var st = function() {
-  var s = 5, i = 8 - s, a = 1e3, f = 0.75;
+var ut = function() {
+  var s = 5, r = 8 - s, i = 1e3, f = 0.75;
   function u(M, t, e) {
     return (M << 2 * s) + (t << s) + e;
   }
-  function S(M) {
+  function D(M) {
     var t = [], e = !1;
     function p() {
       t.sort(M), e = !0;
@@ -158,26 +158,26 @@ var st = function() {
     avg: function(t) {
       var e = this, p = e.histo;
       if (!e._avg || t) {
-        var w = 0, m = 1 << 8 - s, v = 0, y = 0, C = 0, l, $, O, x, D;
+        var w = 0, m = 1 << 8 - s, v = 0, y = 0, C = 0, l, $, O, x, S;
         for ($ = e.r1; $ <= e.r2; $++)
           for (O = e.g1; O <= e.g2; O++)
             for (x = e.b1; x <= e.b2; x++)
-              D = u($, O, x), l = p[D] || 0, w += l, v += l * ($ + 0.5) * m, y += l * (O + 0.5) * m, C += l * (x + 0.5) * m;
+              S = u($, O, x), l = p[S] || 0, w += l, v += l * ($ + 0.5) * m, y += l * (O + 0.5) * m, C += l * (x + 0.5) * m;
         w ? e._avg = [~~(v / w), ~~(y / w), ~~(C / w)] : e._avg = [~~(m * (e.r1 + e.r2 + 1) / 2), ~~(m * (e.g1 + e.g2 + 1) / 2), ~~(m * (e.b1 + e.b2 + 1) / 2)];
       }
       return e._avg;
     },
     contains: function(t) {
-      var e = this, p = t[0] >> i;
-      return gval = t[1] >> i, bval = t[2] >> i, p >= e.r1 && p <= e.r2 && gval >= e.g1 && gval <= e.g2 && bval >= e.b1 && bval <= e.b2;
+      var e = this, p = t[0] >> r;
+      return gval = t[1] >> r, bval = t[2] >> r, p >= e.r1 && p <= e.r2 && gval >= e.g1 && gval <= e.g2 && bval >= e.b1 && bval <= e.b2;
     }
   };
-  function z() {
-    this.vboxes = new S(function(M, t) {
+  function T() {
+    this.vboxes = new D(function(M, t) {
       return j.naturalOrder(M.vbox.count() * M.vbox.volume(), t.vbox.count() * t.vbox.volume());
     });
   }
-  z.prototype = {
+  T.prototype = {
     push: function(t) {
       this.vboxes.push({
         vbox: t,
@@ -214,16 +214,16 @@ var st = function() {
       w[0] > 251 && w[1] > 251 && w[2] > 251 && (t[p].color = [255, 255, 255]);
     }
   };
-  function k(M) {
+  function z(M) {
     var t = 1 << 3 * s, e = new Array(t), p, w, m, v;
     return M.forEach(function(y) {
-      w = y[0] >> i, m = y[1] >> i, v = y[2] >> i, p = u(w, m, v), e[p] = (e[p] || 0) + 1;
+      w = y[0] >> r, m = y[1] >> r, v = y[2] >> r, p = u(w, m, v), e[p] = (e[p] || 0) + 1;
     }), e;
   }
-  function E(M, t) {
+  function A(M, t) {
     var e = 1e6, p = 0, w = 1e6, m = 0, v = 1e6, y = 0, C, l, $;
     return M.forEach(function(O) {
-      C = O[0] >> i, l = O[1] >> i, $ = O[2] >> i, C < e ? e = C : C > p && (p = C), l < w ? w = l : l > m && (m = l), $ < v ? v = $ : $ > y && (y = $);
+      C = O[0] >> r, l = O[1] >> r, $ = O[2] >> r, C < e ? e = C : C > p && (p = C), l < w ? w = l : l > m && (m = l), $ < v ? v = $ : $ > y && (y = $);
     }), new _(e, p, w, m, v, y, t);
   }
   function q(M, t) {
@@ -232,154 +232,154 @@ var st = function() {
     var e = t.r2 - t.r1 + 1, p = t.g2 - t.g1 + 1, w = t.b2 - t.b1 + 1, m = j.max([e, p, w]);
     if (t.count() == 1)
       return [t.copy()];
-    var v = 0, y = [], C = [], l, $, O, x, D;
+    var v = 0, y = [], C = [], l, $, O, x, S;
     if (m == e)
       for (l = t.r1; l <= t.r2; l++) {
         for (x = 0, $ = t.g1; $ <= t.g2; $++)
           for (O = t.b1; O <= t.b2; O++)
-            D = u(l, $, O), x += M[D] || 0;
+            S = u(l, $, O), x += M[S] || 0;
         v += x, y[l] = v;
       }
     else if (m == p)
       for (l = t.g1; l <= t.g2; l++) {
         for (x = 0, $ = t.r1; $ <= t.r2; $++)
           for (O = t.b1; O <= t.b2; O++)
-            D = u($, l, O), x += M[D] || 0;
+            S = u($, l, O), x += M[S] || 0;
         v += x, y[l] = v;
       }
     else
       for (l = t.b1; l <= t.b2; l++) {
         for (x = 0, $ = t.r1; $ <= t.r2; $++)
           for (O = t.g1; O <= t.g2; O++)
-            D = u($, O, l), x += M[D] || 0;
+            S = u($, O, l), x += M[S] || 0;
         v += x, y[l] = v;
       }
-    y.forEach(function(Y, N) {
-      C[N] = v - Y;
+    y.forEach(function(P, F) {
+      C[F] = v - P;
     });
-    function b(Y) {
-      var N = Y + "1", d = Y + "2", o, n, h, r, c, g = 0;
-      for (l = t[N]; l <= t[d]; l++)
+    function b(P) {
+      var F = P + "1", d = P + "2", a, n, h, o, c, g = 0;
+      for (l = t[F]; l <= t[d]; l++)
         if (y[l] > v / 2) {
-          for (h = t.copy(), r = t.copy(), o = l - t[N], n = t[d] - l, o <= n ? c = Math.min(t[d] - 1, ~~(l + n / 2)) : c = Math.max(t[N], ~~(l - 1 - o / 2)); !y[c]; )
+          for (h = t.copy(), o = t.copy(), a = l - t[F], n = t[d] - l, a <= n ? c = Math.min(t[d] - 1, ~~(l + n / 2)) : c = Math.max(t[F], ~~(l - 1 - a / 2)); !y[c]; )
             c++;
           for (g = C[c]; !g && y[c - 1]; )
             g = C[--c];
-          return h[d] = c, r[N] = h[d] + 1, [h, r];
+          return h[d] = c, o[F] = h[d] + 1, [h, o];
         }
     }
     return m == e ? b("r") : m == p ? b("g") : b("b");
   }
-  function P(M, t) {
+  function L(M, t) {
     if (!M.length || t < 2 || t > 256)
       return !1;
-    var e = k(M);
+    var e = z(M);
     e.forEach(function() {
     });
-    var p = E(M, e), w = new S(function(C, l) {
+    var p = A(M, e), w = new D(function(C, l) {
       return j.naturalOrder(C.count(), l.count());
     });
     w.push(p);
     function m(C, l) {
-      for (var $ = C.size(), O = 0, x; O < a; ) {
-        if ($ >= l || O++ > a)
+      for (var $ = C.size(), O = 0, x; O < i; ) {
+        if ($ >= l || O++ > i)
           return;
         if (x = C.pop(), !x.count()) {
           C.push(x), O++;
           continue;
         }
-        var D = q(e, x), b = D[0], Y = D[1];
+        var S = q(e, x), b = S[0], P = S[1];
         if (!b)
           return;
-        C.push(b), Y && (C.push(Y), $++);
+        C.push(b), P && (C.push(P), $++);
       }
     }
     m(w, f * t);
-    for (var v = new S(function(C, l) {
+    for (var v = new D(function(C, l) {
       return j.naturalOrder(C.count() * C.volume(), l.count() * l.volume());
     }); w.size(); )
       v.push(w.pop());
     m(v, t);
-    for (var y = new z(); v.size(); )
+    for (var y = new T(); v.size(); )
       y.push(v.pop());
     return y;
   }
   return {
-    quantize: P
+    quantize: L
   };
-}(), ut = st.quantize;
-function ct(s, i, a) {
+}(), ct = ut.quantize;
+function ft(s, r, i) {
   const f = s, u = [];
-  for (let S = 0, _, z, k, E, q; S < i; S = S + a)
-    _ = S * 4, z = f[_ + 0], k = f[_ + 1], E = f[_ + 2], q = f[_ + 3], (typeof q > "u" || q >= 125) && (z > 250 && k > 250 && E > 250 || u.push([z, k, E]));
+  for (let D = 0, _, T, z, A, q; D < r; D = D + i)
+    _ = D * 4, T = f[_ + 0], z = f[_ + 1], A = f[_ + 2], q = f[_ + 3], (typeof q > "u" || q >= 125) && (T > 250 && z > 250 && A > 250 || u.push([T, z, A]));
   return u;
 }
-function ft(s) {
-  let { colorCount: i, quality: a } = s;
-  if (typeof i > "u" || !Number.isInteger(i))
-    i = 10;
+function lt(s) {
+  let { colorCount: r, quality: i } = s;
+  if (typeof r > "u" || !Number.isInteger(r))
+    r = 10;
   else {
-    if (i === 1)
+    if (r === 1)
       throw new Error("colorCount应该在2到20之间。要获得一种颜色, 调用getColor()而不是getPalette()");
-    i = Math.max(i, 2), i = Math.min(i, 20);
+    r = Math.max(r, 2), r = Math.min(r, 20);
   }
-  return (typeof a > "u" || !Number.isInteger(a) || a < 1) && (a = 10), {
-    colorCount: i,
-    quality: a
+  return (typeof i > "u" || !Number.isInteger(i) || i < 1) && (i = 10), {
+    colorCount: r,
+    quality: i
   };
 }
 const X = {
-  createPixelArray: ct,
-  validateOptions: ft
+  createPixelArray: ft,
+  validateOptions: lt
 };
-function lt(s) {
+function dt(s) {
   s.setAttribute("crossOrigin", "anonymous");
-  const i = document.createElement("canvas"), a = i.getContext("2d"), f = i.width = s.width, u = i.height = s.height;
-  return a.drawImage(s, 0, 0, f, u), { canvas: i, context: a, width: f, height: u, getImageData: () => a.getImageData(0, 0, f, u) };
+  const r = document.createElement("canvas"), i = r.getContext("2d"), f = r.width = s.width, u = r.height = s.height;
+  return i.drawImage(s, 0, 0, f, u), { canvas: r, context: i, width: f, height: u, getImageData: () => i.getImageData(0, 0, f, u) };
 }
-function dt(s, i = 10) {
-  return G(s, 5, i)[0];
+function ht(s, r = 10) {
+  return G(s, 5, r)[0];
 }
-function G(s, i = 8, a = 10) {
+function G(s, r = 8, i = 10) {
   s.setAttribute("crossOrigin", "anonymous");
   const f = X.validateOptions({
-    colorCount: i,
-    quality: a
-  }), u = lt(s), S = u.getImageData(), _ = u.width * u.height, z = X.createPixelArray(S.data, _, f.quality), k = ut(z, f.colorCount);
-  return k ? k.palette() : [];
+    colorCount: r,
+    quality: i
+  }), u = dt(s), D = u.getImageData(), _ = u.width * u.height, T = X.createPixelArray(D.data, _, f.quality), z = ct(T, f.colorCount);
+  return z ? z.palette() : [];
 }
-function ht(s, i) {
-  return new Promise((a, f) => {
+function gt(s, r) {
+  return new Promise((i, f) => {
     const u = document.createElement("img");
     u.setAttribute("crossOrigin", "anonymous"), u.addEventListener("load", () => {
-      const S = G(u, 5, i), _ = S ? S[0] : [];
-      a(_);
+      const D = G(u, 5, r), _ = D ? D[0] : [];
+      i(_);
     }), u.addEventListener("error", () => {
       f();
     }), u.src = s;
   });
 }
-function gt(s) {
-  return new Promise((i, a) => {
+function mt(s) {
+  return new Promise((r, i) => {
     let f = new XMLHttpRequest();
     f.open("GET", s, !0), f.responseType = "arraybuffer", f.onload = function() {
       if (this.status == 200) {
-        let u = new Uint8Array(this.response), S = u.length, _ = new Array(S);
-        for (let E = 0; E < u.length; E++)
-          _[E] = String.fromCharCode(u[E]);
-        let z = _.join(""), k = window.btoa(z);
-        i("data:image/png;base64," + k);
+        let u = new Uint8Array(this.response), D = u.length, _ = new Array(D);
+        for (let A = 0; A < u.length; A++)
+          _[A] = String.fromCharCode(u[A]);
+        let T = _.join(""), z = window.btoa(T);
+        r("data:image/png;base64," + z);
       }
-    }, f.onerror = a, f.send();
+    }, f.onerror = i, f.send();
   });
 }
-const Dt = {
+const Ct = {
   getPalette: G,
-  getColorFromUrl: ht,
-  getImageData: gt,
-  getColor: dt
+  getColorFromUrl: gt,
+  getImageData: mt,
+  getColor: ht
 };
-var mt = typeof globalThis < "u" ? globalThis : typeof window < "u" ? window : typeof global < "u" ? global : typeof self < "u" ? self : {}, Q = {}, pt = {
+var pt = typeof globalThis < "u" ? globalThis : typeof window < "u" ? window : typeof global < "u" ? global : typeof self < "u" ? self : {}, Q = {}, vt = {
   get exports() {
     return Q;
   },
@@ -387,222 +387,236 @@ var mt = typeof globalThis < "u" ? globalThis : typeof window < "u" ? window : t
     Q = s;
   }
 };
-(function(s, i) {
-  (function(a, f) {
+(function(s, r) {
+  (function(i, f) {
     s.exports = f();
-  })(mt, function() {
-    var a = 1e3, f = 6e4, u = 36e5, S = "millisecond", _ = "second", z = "minute", k = "hour", E = "day", q = "week", P = "month", M = "quarter", t = "year", e = "date", p = "Invalid Date", w = /^(\d{4})[-/]?(\d{1,2})?[-/]?(\d{0,2})[Tt\s]*(\d{1,2})?:?(\d{1,2})?:?(\d{1,2})?[.:]?(\d+)?$/, m = /\[([^\]]+)]|Y{1,4}|M{1,4}|D{1,2}|d{1,4}|H{1,2}|h{1,2}|a|A|m{1,2}|s{1,2}|Z{1,2}|SSS/g, v = { name: "en", weekdays: "Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday".split("_"), months: "January_February_March_April_May_June_July_August_September_October_November_December".split("_"), ordinal: function(d) {
-      var o = ["th", "st", "nd", "rd"], n = d % 100;
-      return "[" + d + (o[(n - 20) % 10] || o[n] || o[0]) + "]";
-    } }, y = function(d, o, n) {
+  })(pt, function() {
+    var i = 1e3, f = 6e4, u = 36e5, D = "millisecond", _ = "second", T = "minute", z = "hour", A = "day", q = "week", L = "month", M = "quarter", t = "year", e = "date", p = "Invalid Date", w = /^(\d{4})[-/]?(\d{1,2})?[-/]?(\d{0,2})[Tt\s]*(\d{1,2})?:?(\d{1,2})?:?(\d{1,2})?[.:]?(\d+)?$/, m = /\[([^\]]+)]|Y{1,4}|M{1,4}|D{1,2}|d{1,4}|H{1,2}|h{1,2}|a|A|m{1,2}|s{1,2}|Z{1,2}|SSS/g, v = { name: "en", weekdays: "Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday".split("_"), months: "January_February_March_April_May_June_July_August_September_October_November_December".split("_"), ordinal: function(d) {
+      var a = ["th", "st", "nd", "rd"], n = d % 100;
+      return "[" + d + (a[(n - 20) % 10] || a[n] || a[0]) + "]";
+    } }, y = function(d, a, n) {
       var h = String(d);
-      return !h || h.length >= o ? d : "" + Array(o + 1 - h.length).join(n) + d;
+      return !h || h.length >= a ? d : "" + Array(a + 1 - h.length).join(n) + d;
     }, C = { s: y, z: function(d) {
-      var o = -d.utcOffset(), n = Math.abs(o), h = Math.floor(n / 60), r = n % 60;
-      return (o <= 0 ? "+" : "-") + y(h, 2, "0") + ":" + y(r, 2, "0");
-    }, m: function d(o, n) {
-      if (o.date() < n.date())
-        return -d(n, o);
-      var h = 12 * (n.year() - o.year()) + (n.month() - o.month()), r = o.clone().add(h, P), c = n - r < 0, g = o.clone().add(h + (c ? -1 : 1), P);
-      return +(-(h + (n - r) / (c ? r - g : g - r)) || 0);
+      var a = -d.utcOffset(), n = Math.abs(a), h = Math.floor(n / 60), o = n % 60;
+      return (a <= 0 ? "+" : "-") + y(h, 2, "0") + ":" + y(o, 2, "0");
+    }, m: function d(a, n) {
+      if (a.date() < n.date())
+        return -d(n, a);
+      var h = 12 * (n.year() - a.year()) + (n.month() - a.month()), o = a.clone().add(h, L), c = n - o < 0, g = a.clone().add(h + (c ? -1 : 1), L);
+      return +(-(h + (n - o) / (c ? o - g : g - o)) || 0);
     }, a: function(d) {
       return d < 0 ? Math.ceil(d) || 0 : Math.floor(d);
     }, p: function(d) {
-      return { M: P, y: t, w: q, d: E, D: e, h: k, m: z, s: _, ms: S, Q: M }[d] || String(d || "").toLowerCase().replace(/s$/, "");
+      return { M: L, y: t, w: q, d: A, D: e, h: z, m: T, s: _, ms: D, Q: M }[d] || String(d || "").toLowerCase().replace(/s$/, "");
     }, u: function(d) {
       return d === void 0;
     } }, l = "en", $ = {};
     $[l] = v;
     var O = function(d) {
-      return d instanceof Y;
-    }, x = function d(o, n, h) {
-      var r;
-      if (!o)
+      return d instanceof P;
+    }, x = function d(a, n, h) {
+      var o;
+      if (!a)
         return l;
-      if (typeof o == "string") {
-        var c = o.toLowerCase();
-        $[c] && (r = c), n && ($[c] = n, r = c);
-        var g = o.split("-");
-        if (!r && g.length > 1)
+      if (typeof a == "string") {
+        var c = a.toLowerCase();
+        $[c] && (o = c), n && ($[c] = n, o = c);
+        var g = a.split("-");
+        if (!o && g.length > 1)
           return d(g[0]);
       } else {
-        var I = o.name;
-        $[I] = o, r = I;
+        var I = a.name;
+        $[I] = a, o = I;
       }
-      return !h && r && (l = r), r || !h && l;
-    }, D = function(d, o) {
+      return !h && o && (l = o), o || !h && l;
+    }, S = function(d, a) {
       if (O(d))
         return d.clone();
-      var n = typeof o == "object" ? o : {};
-      return n.date = d, n.args = arguments, new Y(n);
+      var n = typeof a == "object" ? a : {};
+      return n.date = d, n.args = arguments, new P(n);
     }, b = C;
-    b.l = x, b.i = O, b.w = function(d, o) {
-      return D(d, { locale: o.$L, utc: o.$u, x: o.$x, $offset: o.$offset });
+    b.l = x, b.i = O, b.w = function(d, a) {
+      return S(d, { locale: a.$L, utc: a.$u, x: a.$x, $offset: a.$offset });
     };
-    var Y = function() {
+    var P = function() {
       function d(n) {
         this.$L = x(n.locale, null, !0), this.parse(n);
       }
-      var o = d.prototype;
-      return o.parse = function(n) {
+      var a = d.prototype;
+      return a.parse = function(n) {
         this.$d = function(h) {
-          var r = h.date, c = h.utc;
-          if (r === null)
+          var o = h.date, c = h.utc;
+          if (o === null)
             return /* @__PURE__ */ new Date(NaN);
-          if (b.u(r))
+          if (b.u(o))
             return /* @__PURE__ */ new Date();
-          if (r instanceof Date)
-            return new Date(r);
-          if (typeof r == "string" && !/Z$/i.test(r)) {
-            var g = r.match(w);
+          if (o instanceof Date)
+            return new Date(o);
+          if (typeof o == "string" && !/Z$/i.test(o)) {
+            var g = o.match(w);
             if (g) {
-              var I = g[2] - 1 || 0, T = (g[7] || "0").substring(0, 3);
-              return c ? new Date(Date.UTC(g[1], I, g[3] || 1, g[4] || 0, g[5] || 0, g[6] || 0, T)) : new Date(g[1], I, g[3] || 1, g[4] || 0, g[5] || 0, g[6] || 0, T);
+              var I = g[2] - 1 || 0, E = (g[7] || "0").substring(0, 3);
+              return c ? new Date(Date.UTC(g[1], I, g[3] || 1, g[4] || 0, g[5] || 0, g[6] || 0, E)) : new Date(g[1], I, g[3] || 1, g[4] || 0, g[5] || 0, g[6] || 0, E);
             }
           }
-          return new Date(r);
+          return new Date(o);
         }(n), this.$x = n.x || {}, this.init();
-      }, o.init = function() {
+      }, a.init = function() {
         var n = this.$d;
         this.$y = n.getFullYear(), this.$M = n.getMonth(), this.$D = n.getDate(), this.$W = n.getDay(), this.$H = n.getHours(), this.$m = n.getMinutes(), this.$s = n.getSeconds(), this.$ms = n.getMilliseconds();
-      }, o.$utils = function() {
+      }, a.$utils = function() {
         return b;
-      }, o.isValid = function() {
+      }, a.isValid = function() {
         return this.$d.toString() !== p;
-      }, o.isSame = function(n, h) {
-        var r = D(n);
-        return this.startOf(h) <= r && r <= this.endOf(h);
-      }, o.isAfter = function(n, h) {
-        return D(n) < this.startOf(h);
-      }, o.isBefore = function(n, h) {
-        return this.endOf(h) < D(n);
-      }, o.$g = function(n, h, r) {
-        return b.u(n) ? this[h] : this.set(r, n);
-      }, o.unix = function() {
+      }, a.isSame = function(n, h) {
+        var o = S(n);
+        return this.startOf(h) <= o && o <= this.endOf(h);
+      }, a.isAfter = function(n, h) {
+        return S(n) < this.startOf(h);
+      }, a.isBefore = function(n, h) {
+        return this.endOf(h) < S(n);
+      }, a.$g = function(n, h, o) {
+        return b.u(n) ? this[h] : this.set(o, n);
+      }, a.unix = function() {
         return Math.floor(this.valueOf() / 1e3);
-      }, o.valueOf = function() {
+      }, a.valueOf = function() {
         return this.$d.getTime();
-      }, o.startOf = function(n, h) {
-        var r = this, c = !!b.u(h) || h, g = b.p(n), I = function(W, L) {
-          var J = b.w(r.$u ? Date.UTC(r.$y, L, W) : new Date(r.$y, L, W), r);
-          return c ? J : J.endOf(E);
-        }, T = function(W, L) {
-          return b.w(r.toDate()[W].apply(r.toDate("s"), (c ? [0, 0, 0, 0] : [23, 59, 59, 999]).slice(L)), r);
-        }, A = this.$W, H = this.$M, F = this.$D, U = "set" + (this.$u ? "UTC" : "");
+      }, a.startOf = function(n, h) {
+        var o = this, c = !!b.u(h) || h, g = b.p(n), I = function(W, H) {
+          var J = b.w(o.$u ? Date.UTC(o.$y, H, W) : new Date(o.$y, H, W), o);
+          return c ? J : J.endOf(A);
+        }, E = function(W, H) {
+          return b.w(o.toDate()[W].apply(o.toDate("s"), (c ? [0, 0, 0, 0] : [23, 59, 59, 999]).slice(H)), o);
+        }, Y = this.$W, k = this.$M, U = this.$D, N = "set" + (this.$u ? "UTC" : "");
         switch (g) {
           case t:
             return c ? I(1, 0) : I(31, 11);
-          case P:
-            return c ? I(1, H) : I(0, H + 1);
+          case L:
+            return c ? I(1, k) : I(0, k + 1);
           case q:
-            var B = this.$locale().weekStart || 0, R = (A < B ? A + 7 : A) - B;
-            return I(c ? F - R : F + (6 - R), H);
-          case E:
+            var B = this.$locale().weekStart || 0, R = (Y < B ? Y + 7 : Y) - B;
+            return I(c ? U - R : U + (6 - R), k);
+          case A:
           case e:
-            return T(U + "Hours", 0);
-          case k:
-            return T(U + "Minutes", 1);
+            return E(N + "Hours", 0);
           case z:
-            return T(U + "Seconds", 2);
+            return E(N + "Minutes", 1);
+          case T:
+            return E(N + "Seconds", 2);
           case _:
-            return T(U + "Milliseconds", 3);
+            return E(N + "Milliseconds", 3);
           default:
             return this.clone();
         }
-      }, o.endOf = function(n) {
+      }, a.endOf = function(n) {
         return this.startOf(n, !1);
-      }, o.$set = function(n, h) {
-        var r, c = b.p(n), g = "set" + (this.$u ? "UTC" : ""), I = (r = {}, r[E] = g + "Date", r[e] = g + "Date", r[P] = g + "Month", r[t] = g + "FullYear", r[k] = g + "Hours", r[z] = g + "Minutes", r[_] = g + "Seconds", r[S] = g + "Milliseconds", r)[c], T = c === E ? this.$D + (h - this.$W) : h;
-        if (c === P || c === t) {
-          var A = this.clone().set(e, 1);
-          A.$d[I](T), A.init(), this.$d = A.set(e, Math.min(this.$D, A.daysInMonth())).$d;
+      }, a.$set = function(n, h) {
+        var o, c = b.p(n), g = "set" + (this.$u ? "UTC" : ""), I = (o = {}, o[A] = g + "Date", o[e] = g + "Date", o[L] = g + "Month", o[t] = g + "FullYear", o[z] = g + "Hours", o[T] = g + "Minutes", o[_] = g + "Seconds", o[D] = g + "Milliseconds", o)[c], E = c === A ? this.$D + (h - this.$W) : h;
+        if (c === L || c === t) {
+          var Y = this.clone().set(e, 1);
+          Y.$d[I](E), Y.init(), this.$d = Y.set(e, Math.min(this.$D, Y.daysInMonth())).$d;
         } else
-          I && this.$d[I](T);
+          I && this.$d[I](E);
         return this.init(), this;
-      }, o.set = function(n, h) {
+      }, a.set = function(n, h) {
         return this.clone().$set(n, h);
-      }, o.get = function(n) {
+      }, a.get = function(n) {
         return this[b.p(n)]();
-      }, o.add = function(n, h) {
-        var r, c = this;
+      }, a.add = function(n, h) {
+        var o, c = this;
         n = Number(n);
-        var g = b.p(h), I = function(H) {
-          var F = D(c);
-          return b.w(F.date(F.date() + Math.round(H * n)), c);
+        var g = b.p(h), I = function(k) {
+          var U = S(c);
+          return b.w(U.date(U.date() + Math.round(k * n)), c);
         };
-        if (g === P)
-          return this.set(P, this.$M + n);
+        if (g === L)
+          return this.set(L, this.$M + n);
         if (g === t)
           return this.set(t, this.$y + n);
-        if (g === E)
+        if (g === A)
           return I(1);
         if (g === q)
           return I(7);
-        var T = (r = {}, r[z] = f, r[k] = u, r[_] = a, r)[g] || 1, A = this.$d.getTime() + n * T;
-        return b.w(A, this);
-      }, o.subtract = function(n, h) {
+        var E = (o = {}, o[T] = f, o[z] = u, o[_] = i, o)[g] || 1, Y = this.$d.getTime() + n * E;
+        return b.w(Y, this);
+      }, a.subtract = function(n, h) {
         return this.add(-1 * n, h);
-      }, o.format = function(n) {
-        var h = this, r = this.$locale();
+      }, a.format = function(n) {
+        var h = this, o = this.$locale();
         if (!this.isValid())
-          return r.invalidDate || p;
-        var c = n || "YYYY-MM-DDTHH:mm:ssZ", g = b.z(this), I = this.$H, T = this.$m, A = this.$M, H = r.weekdays, F = r.months, U = function(L, J, Z, V) {
-          return L && (L[J] || L(h, c)) || Z[J].slice(0, V);
-        }, B = function(L) {
-          return b.s(I % 12 || 12, L, "0");
-        }, R = r.meridiem || function(L, J, Z) {
-          var V = L < 12 ? "AM" : "PM";
+          return o.invalidDate || p;
+        var c = n || "YYYY-MM-DDTHH:mm:ssZ", g = b.z(this), I = this.$H, E = this.$m, Y = this.$M, k = o.weekdays, U = o.months, N = function(H, J, Z, V) {
+          return H && (H[J] || H(h, c)) || Z[J].slice(0, V);
+        }, B = function(H) {
+          return b.s(I % 12 || 12, H, "0");
+        }, R = o.meridiem || function(H, J, Z) {
+          var V = H < 12 ? "AM" : "PM";
           return Z ? V.toLowerCase() : V;
-        }, W = { YY: String(this.$y).slice(-2), YYYY: this.$y, M: A + 1, MM: b.s(A + 1, 2, "0"), MMM: U(r.monthsShort, A, F, 3), MMMM: U(F, A), D: this.$D, DD: b.s(this.$D, 2, "0"), d: String(this.$W), dd: U(r.weekdaysMin, this.$W, H, 2), ddd: U(r.weekdaysShort, this.$W, H, 3), dddd: H[this.$W], H: String(I), HH: b.s(I, 2, "0"), h: B(1), hh: B(2), a: R(I, T, !0), A: R(I, T, !1), m: String(T), mm: b.s(T, 2, "0"), s: String(this.$s), ss: b.s(this.$s, 2, "0"), SSS: b.s(this.$ms, 3, "0"), Z: g };
-        return c.replace(m, function(L, J) {
-          return J || W[L] || g.replace(":", "");
+        }, W = { YY: String(this.$y).slice(-2), YYYY: this.$y, M: Y + 1, MM: b.s(Y + 1, 2, "0"), MMM: N(o.monthsShort, Y, U, 3), MMMM: N(U, Y), D: this.$D, DD: b.s(this.$D, 2, "0"), d: String(this.$W), dd: N(o.weekdaysMin, this.$W, k, 2), ddd: N(o.weekdaysShort, this.$W, k, 3), dddd: k[this.$W], H: String(I), HH: b.s(I, 2, "0"), h: B(1), hh: B(2), a: R(I, E, !0), A: R(I, E, !1), m: String(E), mm: b.s(E, 2, "0"), s: String(this.$s), ss: b.s(this.$s, 2, "0"), SSS: b.s(this.$ms, 3, "0"), Z: g };
+        return c.replace(m, function(H, J) {
+          return J || W[H] || g.replace(":", "");
         });
-      }, o.utcOffset = function() {
+      }, a.utcOffset = function() {
         return 15 * -Math.round(this.$d.getTimezoneOffset() / 15);
-      }, o.diff = function(n, h, r) {
-        var c, g = b.p(h), I = D(n), T = (I.utcOffset() - this.utcOffset()) * f, A = this - I, H = b.m(this, I);
-        return H = (c = {}, c[t] = H / 12, c[P] = H, c[M] = H / 3, c[q] = (A - T) / 6048e5, c[E] = (A - T) / 864e5, c[k] = A / u, c[z] = A / f, c[_] = A / a, c)[g] || A, r ? H : b.a(H);
-      }, o.daysInMonth = function() {
-        return this.endOf(P).$D;
-      }, o.$locale = function() {
+      }, a.diff = function(n, h, o) {
+        var c, g = b.p(h), I = S(n), E = (I.utcOffset() - this.utcOffset()) * f, Y = this - I, k = b.m(this, I);
+        return k = (c = {}, c[t] = k / 12, c[L] = k, c[M] = k / 3, c[q] = (Y - E) / 6048e5, c[A] = (Y - E) / 864e5, c[z] = Y / u, c[T] = Y / f, c[_] = Y / i, c)[g] || Y, o ? k : b.a(k);
+      }, a.daysInMonth = function() {
+        return this.endOf(L).$D;
+      }, a.$locale = function() {
         return $[this.$L];
-      }, o.locale = function(n, h) {
+      }, a.locale = function(n, h) {
         if (!n)
           return this.$L;
-        var r = this.clone(), c = x(n, h, !0);
-        return c && (r.$L = c), r;
-      }, o.clone = function() {
+        var o = this.clone(), c = x(n, h, !0);
+        return c && (o.$L = c), o;
+      }, a.clone = function() {
         return b.w(this.$d, this);
-      }, o.toDate = function() {
+      }, a.toDate = function() {
         return new Date(this.valueOf());
-      }, o.toJSON = function() {
+      }, a.toJSON = function() {
         return this.isValid() ? this.toISOString() : null;
-      }, o.toISOString = function() {
+      }, a.toISOString = function() {
         return this.$d.toISOString();
-      }, o.toString = function() {
+      }, a.toString = function() {
         return this.$d.toUTCString();
       }, d;
-    }(), N = Y.prototype;
-    return D.prototype = N, [["$ms", S], ["$s", _], ["$m", z], ["$H", k], ["$W", E], ["$M", P], ["$y", t], ["$D", e]].forEach(function(d) {
-      N[d[1]] = function(o) {
-        return this.$g(o, d[0], d[1]);
+    }(), F = P.prototype;
+    return S.prototype = F, [["$ms", D], ["$s", _], ["$m", T], ["$H", z], ["$W", A], ["$M", L], ["$y", t], ["$D", e]].forEach(function(d) {
+      F[d[1]] = function(a) {
+        return this.$g(a, d[0], d[1]);
       };
-    }), D.extend = function(d, o) {
-      return d.$i || (d(o, Y, D), d.$i = !0), D;
-    }, D.locale = x, D.isDayjs = O, D.unix = function(d) {
-      return D(1e3 * d);
-    }, D.en = $[l], D.Ls = $, D.p = {}, D;
+    }), S.extend = function(d, a) {
+      return d.$i || (d(a, P, S), d.$i = !0), S;
+    }, S.locale = x, S.isDayjs = O, S.unix = function(d) {
+      return S(1e3 * d);
+    }, S.en = $[l], S.Ls = $, S.p = {}, S;
   });
-})(pt);
-const Ot = Q;
+})(vt);
+const rt = Q;
+function wt(s, r = "YYYY-MM-DD") {
+  const i = new Date(s.getFullYear(), s.getMonth() + 1, 0);
+  return rt(i).format(r);
+}
+function yt(s, r = "YYYY-MM-DD") {
+  const i = new Date(s.getFullYear(), s.getMonth(), 1);
+  return rt(i).format(r);
+}
+const It = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  firstDayOfMonth: yt,
+  lastDayOfMonth: wt
+}, Symbol.toStringTag, { value: "Module" }));
 export {
-  Dt as ColorThief,
-  Ot as dayjs,
-  bt as downloadFile,
-  St as downloadImg,
-  wt as isObject,
-  yt as localStorage,
-  $t as sessionStorage,
-  Mt as waterMark,
-  vt as withInstall
+  Ct as ColorThief,
+  It as date,
+  rt as dayjs,
+  Ot as downloadFile,
+  _t as downloadImg,
+  Mt as isObject,
+  bt as localStorage,
+  Dt as sessionStorage,
+  St as waterMark,
+  $t as withInstall
 };

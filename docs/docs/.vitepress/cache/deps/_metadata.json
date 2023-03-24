@@ -1,23 +1,29 @@
 {
-  "hash": "8106259a",
-  "browserHash": "21cda4d7",
+  "hash": "27ffb67c",
+  "browserHash": "6876d7cb",
   "optimized": {
     "vue": {
       "src": "../../../../../node_modules/.pnpm/vue@3.2.47/node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "22ec5929",
+      "fileHash": "cc5fe2de",
       "needsInterop": false
     },
     "element-plus": {
       "src": "../../../../../node_modules/.pnpm/element-plus@2.3.1_vue@3.2.47/node_modules/element-plus/es/index.mjs",
       "file": "element-plus.js",
-      "fileHash": "0b75c556",
+      "fileHash": "75165222",
       "needsInterop": false
     },
     "gsap": {
       "src": "../../../../../node_modules/.pnpm/gsap@3.11.5/node_modules/gsap/index.js",
       "file": "gsap.js",
-      "fileHash": "a210ea10",
+      "fileHash": "c7c3e9e5",
+      "needsInterop": false
+    },
+    "cropperjs": {
+      "src": "../../../../../node_modules/.pnpm/cropperjs@1.5.13/node_modules/cropperjs/dist/cropper.esm.js",
+      "file": "cropperjs.js",
+      "fileHash": "a0cf76a1",
       "needsInterop": false
     }
   },

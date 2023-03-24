@@ -19,15 +19,19 @@ export const sidebar = {
   ],
   '/utils/': [
     {
-      text: '工具类',
+      text: 'utils',
+      link: '/utils/',
       items: [
-        { text: '安装', link: '/utils/' },
+        // { text: '安装', link: '/utils/' },
         { text: '添加水印', link: '/utils/waterMark' },
         { text: '临时存储', link: '/utils/sessionStorage' },
         { text: '永久存储', link: '/utils/localStorage' },
         { text: '下载', link: '/utils/download' },
         { text: '提取图片颜色', link: '/utils/color-thief' },
-        { text: 'dayjs', link: '/utils/dayjs' },
+        { text: '日期处理', link: '/utils/date' },
+        { text: 'ts 工具', link: '/utils/typescript' },
+
+        { text: '集成的工具', link: '/utils/integration' },
       ]
     }
   ]

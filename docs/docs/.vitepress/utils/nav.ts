@@ -12,7 +12,7 @@ export const nav = [
     link: '/components/CountTo'
   },
   {
-    text: '工具类',
+    text: 'utils',
     activeMatch: '^/utils/',
     link: '/utils/'
   },

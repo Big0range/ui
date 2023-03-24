@@ -7,7 +7,7 @@
 ::: details 显示代码
 
 ```ts
-import { ColorThief } from "utils";
+import { ColorThief } from "@big0range/utils";
 
 const imgDom = document.getElementById("img");
 
@@ -18,8 +18,8 @@ const color = ColorThief.getColor(imgDom, 10);
 
 | 参数        | 说明                    | 类型             | 可选值 | 默认 |
 | ----------- | ----------------------- | ---------------- | ------ | ---- |
-| sourceImage | img 的 DOM 元素         | HTMLImageElement | —      | —    |
-| quality     | 精准度,越低则准确度越高 | number           | —      | 10   |
+| sourceImage | img 的 DOM 元素         | `HTMLImageElement` | —      | —    |
+| quality     | 精准度,越低则准确度越高 | `number`           | —      | 10   |
 
 ## getColorFromUrl 从 url 中提取主题色
 
@@ -28,7 +28,7 @@ const color = ColorThief.getColor(imgDom, 10);
 ::: details 显示代码
 
 ```ts
-import { ColorThief } from "utils";
+import { ColorThief } from "@big0range/utils";
 
 const imgUrl = "https://www.******";
 
@@ -39,8 +39,8 @@ const color = ColorThief.getColorFromUrl(imgUrl, 10);
 
 | 参数     | 说明                    | 类型   | 可选值 | 默认 |
 | -------- | ----------------------- | ------ | ------ | ---- |
-| imageUrl | 图片地址                | string | —      | —    |
-| quality  | 精准度,越低则准确度越高 | number | —      | 10   |
+| imageUrl | 图片地址                | `string` | —      | —    |
+| quality  | 精准度,越低则准确度越高 | `number` | —      | 10   |
 
 ## getImageData 网络图片转 base64
 
@@ -49,7 +49,7 @@ const color = ColorThief.getColorFromUrl(imgUrl, 10);
 ::: details 显示代码
 
 ```ts
-import { ColorThief } from "utils";
+import { ColorThief } from "@big0range/utils";
 
 const imgUrl = "https://www.******";
 
@@ -60,7 +60,7 @@ const base64 = await ColorThief.getImageData(imgUrl);
 
 | 参数     | 说明     | 类型   | 可选值 | 默认 |
 | -------- | -------- | ------ | ------ | ---- |
-| imageUrl | 图片地址 | string | —      | —    |
+| imageUrl | 图片地址 | `string` | —      | —    |
 
 ## getPalette 取色板
 
@@ -69,7 +69,7 @@ const base64 = await ColorThief.getImageData(imgUrl);
 ::: details 显示代码
 
 ```ts
-import { ColorThief } from "utils";
+import { ColorThief } from "@big0range/utils";
 
 const imgDom = document.getElementById("img");
 
@@ -80,7 +80,7 @@ const colorPalette = ColorThief.getPalette(imgDom, 8, 10);
 
 | 参数        | 说明                    | 类型             | 可选值 | 默认 |
 | ----------- | ----------------------- | ---------------- | ------ | ---- |
-| sourceImage | img 的 DOM 元素         | HTMLImageElement | —      | —    |
-| colorCount  | 需要提取的数量          | number           | —      | 8    |
-| quality     | 精准度,越低则准确度越高 | number           | —      | 10   |
+| sourceImage | img 的 DOM 元素         | `HTMLImageElement` | —      | —    |
+| colorCount  | 需要提取的数量          | `number`           | —      | 8    |
+| quality     | 精准度,越低则准确度越高 | `number`           | —      | 10   |
 

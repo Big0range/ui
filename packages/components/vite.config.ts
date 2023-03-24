@@ -21,7 +21,7 @@ export default defineConfig({
     },
     rollupOptions: {
       // 确保外部化处理那些你不想打包进库的依赖
-      external: ['vue','element-plus'],
+      external: ['vue','element-plus','utils','@big0range/utils'],
       output: {
         dir: './big0range-ui/dist',
         globals: {

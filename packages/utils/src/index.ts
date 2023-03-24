@@ -6,3 +6,5 @@ export { default as waterMark } from './waterMark';
 export * from './download';
 export *  from './color-thief';
 export { default as dayjs }  from 'dayjs';
+export * as date from './date';
+export * from './type';
