@@ -13,7 +13,12 @@ export const sidebar = {
       text: '组件',
       items: [
         { text: 'CountTo', link: '/components/CountTo' },
+        { text: 'Crop', link: '/components/Crop' },
+
+
+
         { text: 'Demo', link: '/components/Demo' },
+
       ]
     }
   ],

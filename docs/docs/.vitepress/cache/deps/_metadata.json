@@ -1,33 +1,42 @@
 {
-  "hash": "27ffb67c",
-  "browserHash": "6876d7cb",
+  "hash": "88a7f899",
+  "browserHash": "fa94047f",
   "optimized": {
     "vue": {
       "src": "../../../../../node_modules/.pnpm/vue@3.2.47/node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "cc5fe2de",
+      "fileHash": "f9f930c8",
       "needsInterop": false
     },
     "element-plus": {
       "src": "../../../../../node_modules/.pnpm/element-plus@2.3.1_vue@3.2.47/node_modules/element-plus/es/index.mjs",
       "file": "element-plus.js",
-      "fileHash": "75165222",
+      "fileHash": "c6e3f1fc",
       "needsInterop": false
     },
     "gsap": {
       "src": "../../../../../node_modules/.pnpm/gsap@3.11.5/node_modules/gsap/index.js",
       "file": "gsap.js",
-      "fileHash": "c7c3e9e5",
+      "fileHash": "55dfbfc0",
+      "needsInterop": false
+    },
+    "@element-plus/icons-vue": {
+      "src": "../../../../../node_modules/.pnpm/@element-plus+icons-vue@2.1.0_vue@3.2.47/node_modules/@element-plus/icons-vue/dist/index.js",
+      "file": "@element-plus_icons-vue.js",
+      "fileHash": "4f6f8c7c",
       "needsInterop": false
     },
     "cropperjs": {
       "src": "../../../../../node_modules/.pnpm/cropperjs@1.5.13/node_modules/cropperjs/dist/cropper.esm.js",
       "file": "cropperjs.js",
-      "fileHash": "a0cf76a1",
+      "fileHash": "fa90f86b",
       "needsInterop": false
     }
   },
   "chunks": {
+    "chunk-YGY7LSRJ": {
+      "file": "chunk-YGY7LSRJ.js"
+    },
     "chunk-ODJDOLKM": {
       "file": "chunk-ODJDOLKM.js"
     },

@@ -13,7 +13,7 @@
   <Demo  :a="'aaa'" :b="'bbbb'"/>
 </template>
 <script lang="ts" setup>
-  import { Demo } from "ui";
+  import { Demo } from "@big0range/ui";;
 </script>
 ```
 

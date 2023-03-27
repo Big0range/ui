@@ -13,7 +13,7 @@
   <CountTo :start-val="0" :end-val="666666" :duration="5000" />
 </template>
 <script lang="ts" setup>
-  import { CountTo } from "ui";
+  import { CountTo } from "@big0range/ui";
 </script>
 ```
 

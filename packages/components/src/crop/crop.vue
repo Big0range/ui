@@ -55,9 +55,9 @@
               width: `${previewWidth}px`,
               height: `${previewHeight}px`,
             }"
-            :src="img.url"
+            :src="img.base64"
             :zoom-rate="1.2"
-            :preview-src-list="images.map((item) => item.url)"
+            :preview-src-list="images.map((item) => item.base64)"
             :initial-index="index"
             fit="fill"
             ref="imgRef"
@@ -124,7 +124,14 @@
 
 <script lang="ts" setup>
 import { ref, withDefaults } from "vue";
-import { ElDialog, ElButtonGroup, ElButton, ElImage, ElIcon } from "element-plus";
+import {
+  ElDialog,
+  ElButtonGroup,
+  ElButton,
+  ElImage,
+  ElIcon,
+  ElMessage,
+} from "element-plus";
 import {
   ZoomIn,
   ZoomOut,
@@ -135,19 +142,19 @@ import {
   Loading,
   Plus,
 } from "@element-plus/icons-vue";
-import "./demo.scss";
+import "./crop.scss";
 import "cropperjs/dist/cropper.css";
 import Cropper from "cropperjs";
 
 const images = ref<
   {
     key: number;
-    url: string;
+    base64: string;
     blob: Blob;
   }[]
 >([]);
 const emits = defineEmits<{
-  (event: "onReady", data: [string, Blob]): void;
+  (event: "onReady", data: { base64: string; blob: Blob }): void;
   (event: "onRemove", index: number): void;
 }>();
 const loadings = ref<boolean[]>([]);
@@ -223,7 +230,7 @@ const props = withDefaults(
     /**
      * 上传前的钩子，参数为Promise函数, 自定义上传方法,如需展示上传中,这很必要
      */
-    beforeReady?: () => Promise<any>;
+    beforeReady?: (blob: Blob) => Promise<any>;
   }>(),
   {
     previewType: () => ["default", "round", "circle"],
@@ -270,12 +277,26 @@ const uploadImg = () => {
 };
 let CROPPER: Cropper;
 function loadingImg(eve: any) {
+  if (
+    ![
+      "image/jpeg",
+      "image/webp",
+      "image/png",
+      "image/bmp",
+      "image/tiff",
+      "image/svg+xml",
+    ].includes(eve.target.files[0].type)
+  ) {
+    ElMessage.error("请上传图片格式");
+    throw new Error("请上传图片格式");
+  }
   showCropper.value = true;
   CROPPER?.destroy();
   //读取上传文件
   let reader = new FileReader();
   if (eve.target!.files[0]) {
     //readAsDataURL方法可以将File对象转化为data:URL格式的字符串（base64编码）
+    console.log("eve.target.files[0]", eve.target.files[0].type);
     reader.readAsDataURL(eve.target.files[0]);
     reader.onload = (e) => {
       let dataURL = reader.result;
@@ -340,7 +361,7 @@ async function GetData() {
   });
   const imageData = {
     key: Math.random(),
-    url: data[0],
+    base64: data[0],
     blob: data[1],
   };
   images.value.push(imageData);
@@ -348,9 +369,9 @@ async function GetData() {
   loadings.value[images.value.length - 1] = true;
   try {
     if (props.beforeReady) {
-      await props.beforeReady();
+      await props.beforeReady(imageData.blob);
     }
-    emits("onReady", data);
+    emits("onReady", imageData);
     // 取消loading
     for (let i = 0; i < images.value.length; i++) {
       if (images.value[i].key === imageData.key) {
@@ -386,9 +407,18 @@ defineExpose({
   getImageData: () =>
     images.value.map((item) => {
       return {
-        url: item.url,
+        base64: item.base64,
         blob: item.blob,
       };
     }),
+  verify: () => {
+    if (images.value.length === 0) {
+      return false;
+    }
+    if (loadings.value.includes(true)) {
+      return false;
+    }
+    return true;
+  },
 });
 </script>
