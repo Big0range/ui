@@ -4,7 +4,7 @@ dist
 dist-ssr
 vite.config.ts
 *.local
-
+cache
 # Editor directories and files
 .idea
 .vscode
