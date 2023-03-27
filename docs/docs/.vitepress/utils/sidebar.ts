@@ -12,8 +12,8 @@ export const sidebar = {
     {
       text: '组件',
       items: [
-        { text: 'CountTo', link: '/components/CountTo' },
-        { text: 'Crop', link: '/components/Crop' },
+        { text: 'CountTo 数字平滑过度', link: '/components/CountTo' },
+        { text: 'Crop 图片裁剪组件', link: '/components/Crop' },
 
 
 

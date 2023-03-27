@@ -23,3 +23,13 @@ $ yarn add element-plus @big0range/ui
 # pnpm
 $ pnpm install element-plus @big0range/ui
 ```
+在main.ts中引入样式文件
+```ts
+import { createApp } from 'vue'
+// 导入样式文件 如果你的项目中有element-ui的话可以不用再导入element的样式文件
+import "@big0range/ui/dist/style.css";
+
+import App from './App.vue'
+// import "element-plus/dist/index.css";
+createApp(App).mount('#app')
+```

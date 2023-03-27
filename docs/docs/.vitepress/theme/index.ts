@@ -1,6 +1,7 @@
 import DefaultTheme from "vitepress/theme";
+import "@big0range/ui/dist/style.css";
 import * as ui from 'ui';
-import "element-plus/dist/index.css";
+// import {BiCrop} from '@big0range/ui';
 console.log('theme',ui)
 export default {
   ...DefaultTheme,

@@ -1,4 +1,4 @@
-# CountTo
+# CountTo 图片裁剪组件
 
 ## 基础用法
 
@@ -103,7 +103,7 @@
 | previewWidth    | 预览小图宽度                                                                                                                                                             | number                | —                                                                  | 150                              |
 | previewHeight   | 预览小图高度                                                                                                                                                             | number                | —                                                                  | 150                              |
 | title           | 弹窗标题                                                                                                                                                                 | string                | —                                                                  | 裁剪图片                         |
-| getDataIoptions | 自己鼠标放到参数方便看吧 太多了 不想写                                                                                                                                   | —                     | —                                                                  | —                                |
+| getDataIoptions | 详情如下图写                                                                                                                                   | —                     | —                                                                  | —                                |
 | type            | 导出图片类型                                                                                                                                                             | string                | `image/jpeg`、`image/webp`、`image/png`、`image/bmp`、`image/tiff` | `image/png`                      |
 | quality         | 导出图片质量，值在 0 与 1 之间，当图片格式为 image/jpeg 或者 image/webp 时用来指定图片展示质量。如果这个参数的值不在指定类型与范围之内，则使用默认值，其余参数将被忽略。 | number                | —                                                                  | 1                                |
 | max             | 最大选择数量                                                                                                                                                             | number                | —                                                                  | 2                                |
@@ -111,3 +111,4 @@
 | uploadText      | 上传中文案                                                                                                                                                               | string                | —                                                                  | 上传中                           |
 | beforeReady     | 上传前的钩子，参数为 Promise 函数, 自定义上传方法,如需展示上传中,这很必要                                                                                                | `()=>Promise<unkonw>` | —                                                                  | —                                |
 
+![示例](/getDataIoptions.png)

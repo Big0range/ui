@@ -189,19 +189,46 @@ const props = withDefaults(
      */
     title: string;
     /**
-     * 获取裁剪后的图片的配置项,需要注意的是你设置的宽高可能只生效一个,因为你设置的裁切比例不一定和你的宽高比例一致。
-     * @param width number 输出画布的目标宽度。  非必填
-     * @param height number 输出画布的目标高度。 非必填
-     * @param minWidth number 输出画布的最小目标宽度，默认值为0 非必填
-     * @param minHeight number 输出画布的最小目标高度，默认值为0. 非必填
-     * @param maxWidth number 输出画布的最大目标宽度，默认值为Infinity. 非必填
-     * @param maxHeight number 输出画布的最大目标高度，默认值为Infinity. 非必填
-     * @param fillColor string 用于填充输出画布中任何 alpha 值的颜色，默认值为transparent. 非必填
-     * @param imageSmoothingEnabled boolean 设置为更改图像是否平滑(true，默认)或不平滑(false)。
-     * @param imageSmoothingQuality ImageSmoothingQuality 设置图像平滑的质量，“低”(默认值)，“中”或“高”之一。
      * @link https://github.com/fengyuanchen/cropperjs#getcroppedcanvasoptions
      */
-    getDataIoptions: Cropper.GetCroppedCanvasOptions;
+    getDataIoptions: {
+      /**
+       * 输出画布的目标宽度。  非必填
+       */
+      width?: number;
+      /**
+       *  输出画布的目标高度。 非必填
+       */
+      height?: number;
+      /**
+       * 输出画布的最小目标宽度，默认值为0 非必填
+       */
+      minWidth?: number;
+      /**
+       * 输出画布的最小目标高度，默认值为0. 非必填
+       */
+      minHeight?: number;
+      /**
+       * 输出画布的最大目标宽度，默认值为Infinity. 非必填
+       */
+      maxWidth?: number;
+      /**
+       * 输出画布的最大目标高度，默认值为Infinity. 非必填
+       */
+      maxHeight?: number;
+      /**
+       * 用于填充输出画布中任何 alpha 值的颜色，默认值为transparent. 非必填
+       */
+      fillColor?: string;
+      /**
+       * 设置为更改图像是否平滑(true，默认)或不平滑(false)。
+       */
+      imageSmoothingEnabled?: boolean;
+      /**
+       * 设置图像平滑的质量，“低”(默认值)，“中”或“高”之一。
+       */
+      imageSmoothingQuality?: "low" | "medium" | "high";
+    };
     /**
      * 导出图片类型，可选值为 image/jpeg、image/webp、image/png、image/bmp、image/tiff，默认值为 image/png。
      */
