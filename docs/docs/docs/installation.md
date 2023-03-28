@@ -26,8 +26,11 @@ $ pnpm install element-plus @big0range/ui
 在main.ts中引入样式文件
 ```ts
 import { createApp } from 'vue'
-// 导入样式文件 如果你的项目中有element-ui的话可以不用再导入element的样式文件
+// 导入样式文件
 import "@big0range/ui/dist/style.css";
+// element 样式文件 根据个人情况进行修改
+import "element-plus/dist/index.css";
+
 
 import App from './App.vue'
 // import "element-plus/dist/index.css";
