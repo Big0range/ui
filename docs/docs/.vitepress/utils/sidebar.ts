@@ -14,7 +14,7 @@ export const sidebar = {
       items: [
         { text: 'CountTo 数字平滑过度', link: '/components/CountTo' },
         { text: 'Crop 图片裁剪组件', link: '/components/Crop' },
-
+        { text: 'colorAnimateText 字体动画', link: '/components/colorAnimateText' },
 
 
         { text: 'Demo', link: '/components/Demo' },
