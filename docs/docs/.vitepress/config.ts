@@ -15,6 +15,7 @@ export default defineConfig({
     themeConfig: {
         nav,
         sidebar,
+        sidebarMenuLabel: '目录',
         logo: '/logo.png',
         siteTitle: 'big0range-ui',
         socialLinks: [{ icon: 'github', link: 'https://github.com/Big0range/ui' },],
