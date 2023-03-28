@@ -23,5 +23,5 @@ type e = Unpacked<() => Promise<number>>;
 ```ts
 import { PromiseReturnType } from "@big0range/utils";
 // number
-type a = Unpacked<() => Promise<number>>;
+type a = PromiseReturnType<() => Promise<number>>;
 ```
