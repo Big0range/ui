@@ -1,19 +1,19 @@
-# colorAnimateText 字体动画
+# ColorAnimateText 字体动画
 
 ## 示例
 
 <ClientOnly>
- <ColorAnimateText :texts="['这是一段示例文字','hello word']" />
+ <BiColorAnimateText :texts="['这是一段示例文字','hello word']" />
 </ClientOnly>
 
 ::: details 显示代码
 
 ```html
 <template>
-  <ColorAnimateText :texts="['这是一段示例文字','hello word']" />
+  <BiColorAnimateText :texts="['这是一段示例文字','hello word']" />
 </template>
 <script lang="ts" setup>
-  import { ColorAnimateText } from "@big0range/ui";
+  import { BiColorAnimateText } from "@big0range/ui";
 </script>
 ```
 ::: 

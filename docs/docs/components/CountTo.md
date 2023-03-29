@@ -3,17 +3,17 @@
 ## 示例
 
 <ClientOnly>
- <CountTo :startVal="0"  :end-val="666666" :duration="5000" />
+ <BiCountTo :startVal="0"  :end-val="666666" :duration="5000" />
 </ClientOnly>
 
 ::: details 显示代码
 
 ```html
 <template>
-  <CountTo :start-val="0" :end-val="666666" :duration="5000" />
+  <BiCountTo :start-val="0" :end-val="666666" :duration="5000" />
 </template>
 <script lang="ts" setup>
-  import { CountTo } from "@big0range/ui";
+  import { BiCountTo } from "@big0range/ui";
 </script>
 ```
 

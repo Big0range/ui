@@ -1,0 +1,46 @@
+.bi-menu {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bi-menu li {
+  list-style: none;
+  position: absolute;
+  left: 0px;
+  transform: rotate(0deg) translateX(80px);
+  transform-origin: 100px;
+  transition: 0.5s;
+  transition-delay: calc(0.05s * var(--i));
+}
+.bi-menu.active li {
+  transform: rotate(calc(var(--i) / var(--sum) * 360deg));
+}
+.bi-menu li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  transform: rotate(calc(var(--i) / var(--sum) * -360deg));
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+.toggle {
+  font-size: 2em;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+}
