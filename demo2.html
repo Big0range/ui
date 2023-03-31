@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .demo {
+        width: 200px;
+        height: 200px;
+        background: linear-gradient(
+          to left,
+          #e66465,
+          #9198e5 var(--per),
+          #eee var(--per)
+        );
+        transition: linear-gradient ease 0.5s;
+      }
+    </style>
+    <div class="demo"></div>
+    <div onclick="reset()">reset</div>
+    <script>
+      const dom = document.querySelector(".demo");
+      let startTime = new Date().getTime();
+      const a = () => {
+        const time = new Date().getTime();
+        const diff = (time - startTime) / 1000 / 2;
+        const i = diff * 100;
+        const pre = i > 100 ? 100 : i;
+        console.log(time - startTime)
+        dom.style.setProperty("--per", `${pre}%`);
+        if (i <= 100) {
+          animation = requestAnimationFrame(a);
+        }
+      };
+      let animation = requestAnimationFrame(a);
+      const reset = () => {
+        cancelAnimationFrame(animation);
+        startTime = new Date().getTime();
+        animation = requestAnimationFrame(a);
+      };
+    </script>
+  </body>
+</html>

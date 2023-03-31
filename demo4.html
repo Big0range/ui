@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      canvas {
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="flex">
+      <img
+        class="img"
+        src="./demo.png"
+        alt=""
+        srcset=""
+        style="margin-right: 20px; position: fixed; left: 100vw"
+      />
+      <canvas id="c1" width="500" height="500"></canvas>
+      <canvas id="c2" width="500" height="500"></canvas>
+    </div>
+    <script>
+      const width = (height = 500);
+      const TOLERANCE = 40;
+      let filterRgb = [19, 142, 212];
+      const filterRgb2 = [18, 94, 131];
+      const filterRgb3 = [104, 180, 210];
+      const c1 = document.getElementById("c1");
+      const ctx1 = c1.getContext("2d");
+      const c2 = document.getElementById("c2");
+      const ctx2 = c2.getContext("2d");
+      async function start() {
+        ctx1.drawImage(document.querySelector("img"), 0, 0, width, height);
+        console.log(width, height);
+        const frame = ctx1.getImageData(0, 0, width, height);
+        const l = frame.data.length / 4;
+        for (let i = 0; i < l; i++) {
+          let r = frame.data[i * 4 + 0];
+          let g = frame.data[i * 4 + 1];
+          let b = frame.data[i * 4 + 2];
+          function demo (index) {
+            frame.data[index * 4 + 0] = 255;
+            frame.data[index * 4 + 1] = 100;
+            frame.data[index * 4 + 2] = 100;
+            frame.data[index * 4 + 3] = 255;
+          }
+          if (
+            Math.abs(filterRgb[0] - r) < TOLERANCE &&
+            Math.abs(filterRgb[1] - g) < TOLERANCE &&
+            Math.abs(filterRgb[2] - b) < TOLERANCE
+          ) {
+            demo(i)
+          }
+          if (
+            Math.abs(filterRgb2[0] - r) < TOLERANCE &&
+            Math.abs(filterRgb2[1] - g) < TOLERANCE &&
+            Math.abs(filterRgb2[2] - b) < TOLERANCE
+          ) {
+            demo(i)
+          }
+          if (
+            Math.abs(filterRgb3[0] - r) < TOLERANCE &&
+            Math.abs(filterRgb3[1] - g) < TOLERANCE &&
+            Math.abs(filterRgb3[2] - b) < TOLERANCE
+          ) {
+            demo(i)
+          }
+        }
+        ctx2.putImageData(frame, 0, 0);
+      }
+      window.onload = start;
+    </script>
+  </body>
+</html>
+

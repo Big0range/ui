@@ -10,13 +10,16 @@
   },
   "dependencies": {
     "@big0range/utils": "workspace:^1.0.8",
+    "@vitejs/plugin-vue-jsx": "^3.0.1",
     "dayjs": "^1.11.7",
     "element-plus": "^2.3.1",
+    "text-to-svg": "^3.1.5",
     "ui": "workspace:^1.0.0",
     "utils": "workspace:^1.0.8",
     "vue": "^3.2.47"
   },
   "devDependencies": {
+    "@types/text-to-svg": "^3.1.1",
     "@vitejs/plugin-vue": "^4.1.0",
     "typescript": "^4.9.3",
     "vite": "^4.2.0",

@@ -4,8 +4,10 @@ import { default as BiCrop, BiCropApi } from "./crop";
 import { default as BiCountTo } from "./countTo";
 import { default as BiColorAnimateText } from "./colorAnimateText";
 import { default as BiRotateMenu } from "./rotateMenu";
+import { default as BiSwiper } from "./swiper";
+import { default as BiSwiperItem } from "./swiper-item";
 // import "element-plus/dist/index.css";
-export { Button, Demo, BiCountTo, BiCrop, BiColorAnimateText, BiRotateMenu };
+export { Button, Demo, BiCountTo, BiCrop, BiColorAnimateText, BiRotateMenu ,BiSwiper,BiSwiperItem};
 export type { DemoApi, BiCropApi };
-export default [Button, Demo, BiCountTo, BiCrop, BiColorAnimateText, BiRotateMenu];
+export default [Button, Demo, BiCountTo, BiCrop, BiColorAnimateText, BiRotateMenu,BiSwiper,BiSwiperItem];
 
