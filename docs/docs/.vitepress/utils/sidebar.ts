@@ -27,7 +27,8 @@ export const sidebar = {
       text: 'utils',
       link: '/utils/',
       items: [
-        // { text: '安装', link: '/utils/' },
+        { text: '安装', link: '/utils/' },
+        { text: '手绘签名', link: '/utils/canvasSign' },
         { text: '添加水印', link: '/utils/waterMark' },
         { text: '临时存储', link: '/utils/sessionStorage' },
         { text: '永久存储', link: '/utils/localStorage' },
@@ -35,7 +36,6 @@ export const sidebar = {
         { text: '提取图片颜色', link: '/utils/color-thief' },
         { text: '日期处理', link: '/utils/date' },
         { text: 'ts 工具', link: '/utils/typescript' },
-
         { text: '集成的工具', link: '/utils/integration' },
       ]
     }

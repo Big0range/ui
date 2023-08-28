@@ -10,10 +10,10 @@ hero:
     alt: logo
   actions:
     - theme: brand
-      text: Get Started
+      text: 快速上手
       link: /docs/installation
     - theme: alt
-      text: View on GitHub
+      text: GitHub
       link: https://github.com/Big0range/ui
 
 features:
@@ -27,7 +27,7 @@ features:
     title: 按需引入
     details: 直接支持按需引入无需配置任何插件。
 ---
-<!-- <el-button type="primary">主要按钮</el-button> -->
+
 <style>
 :root {
   --vp-home-hero-name-color: transparent;
