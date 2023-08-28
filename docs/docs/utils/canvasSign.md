@@ -8,7 +8,7 @@ let canvasSign;
 const download = () => {
   canvasSign.download("test.png", "image/jpeg");
 };
-setTimeout(() => {
+onMounted(() => {
     try{
         canvasSign = new CanvasSign(document.querySelector(".canvas-sign"), {
         width: 500,
@@ -19,7 +19,7 @@ setTimeout(() => {
     }catch(err){
         console.log(err)
     }
-},1000);
+});
 const setLineWidth = (e) => {
   console.log(e.target.value);
   canvasSign.setLineWidth(e.target.value);
