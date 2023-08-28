@@ -15,7 +15,7 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v2.2.4
         with:
-          version: 7.30.0
+          version: 8.7.0
       - name: Install modules
         run: pnpm install
       - name: Build

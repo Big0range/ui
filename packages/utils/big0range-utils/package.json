@@ -32,7 +32,6 @@
   ],
   "author": "",
   "license": "MIT",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/greensock/GSAP"

@@ -8,3 +8,4 @@ export *  from './color-thief';
 export { default as dayjs }  from 'dayjs';
 export * as date from './date';
 export * from './type';
+export *  from './canvas-sign';
