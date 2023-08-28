@@ -1,0 +1,1 @@
+import{_ as s,o as a,c as t,O as n}from"./chunks/framework.54e68f16.js";const u=JSON.parse('{"title":"日期处理","description":"","frontmatter":{},"headers":[],"relativePath":"utils/date.md","lastUpdated":1679652625000}'),e={name:"utils/date.md"},l=n("",10),o=[l];function p(r,c,d,i,D,y){return a(),t("div",null,o)}const F=s(e,[["render",p]]);export{u as __pageData,F as default};
